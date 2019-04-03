@@ -40,7 +40,7 @@ FILE *SymbleFout;   //符号表
 FILE *NumFout;   //常量表
 
 KeyWord key[14] = { {"void",1},{"main",2},{"int",3},{"float",4},{"const",5},{"for",6},
-{"if",7},{"else",8},{"then",9},{"while",10},{"switch",11},{"break",12},{"begin",13},{"end",14}};
+{"if",7},{"else",8},{"then",9},{"while",10},{"switch",11},{"break",12},{"begin",13},{"end",14} };
 
 token CurrentToken;
 token zancun;
@@ -60,7 +60,7 @@ int Flag_NumHave();   //查添常量表
 //*************************************
 int main()
 {
-	int i = 0,j = 0;
+	int i = 0, j = 0;
 	code_count = 0;
 	var_count = 1;
 	label_count = 1;
@@ -70,12 +70,11 @@ int main()
 	Scanner();
 	printf("输出标识符表：\n");
 	for (i = 0; i < var_count - 1; i++)
-		printf("<%s,%d>",SymbleList[i].name,i + 1);
+		printf("<%s,%d>", SymbleList[i].name, i + 1);
 	printf("\n");
 	printf("输出数字表：\n");
 	for (i = 0; i < num_count; i++)
-		printf("<%s,%d>",NumList[i - 1].name,i + 1);
-
+		printf("<%s,%d>", NumList[i - 1].name, i + 1);
 	return 0;
 }
 //*************主程序***************
@@ -159,25 +158,25 @@ void IsAlpha()
 				h = 0;
 			else
 			{
-h = 1; break;
-}
+				h = 1; break;
+			}
 
-}
-if (h == 0)
-	break;
-	}
+		}
 		if (h == 0)
-		{
-			CurrentToken.code = key[i].code;//将第i个关键字的机内码给单词缓冲区中现有单词的机内码
-			CurrentToken.addr = -1;//关键字地址为-1
-			OutPut();
-		}
-		else
-		{
-			CurrentToken.code = 17;
-			CurrentToken.addr = addr_count++;	//如果不是关键字就是普通标识符，地址加１
-			OutPut();
-		}
+			break;
+	}
+	if (h == 0)
+	{
+		CurrentToken.code = key[i].code;//将第i个关键字的机内码给单词缓冲区中现有单词的机内码
+		CurrentToken.addr = -1;//关键字地址为-1
+		OutPut();
+	}
+	else
+	{
+		CurrentToken.code = 17;
+		CurrentToken.addr = addr_count++;	//如果不是关键字就是普通标识符，地址加１
+		OutPut();
+	}
 }
 //**************处理注释*****************
 void IsAnotation()
@@ -517,10 +516,10 @@ void OutPut()
 	{
 		CurrentSimble.number = CurrentToken.addr;
 		CurrentSimble.type = CurrentToken.code;
-		strcpy(CurrentSimble.name,CurrentToken.name);
+		strcpy(CurrentSimble.name, CurrentToken.name);
 		Flag_WordHave();
-		fprintf(TokenFout,"<id,%d>",addr_count);
-		printf("<id,%d>",addr_count);
+		fprintf(TokenFout, "<id,%d>", addr_count);
+		printf("<id,%d>", addr_count);
 	}
 	else
 		if (CurrentToken.code == 18)         //   数字输出
