@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C12DEB5D-9416-448F-B990-5E0ADEBF9761}</ProjectGuid>
+    <ProjectGuid>{568F33C6-E1C4-4E03-8B8B-604FDF9A8E06}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My1120</RootNamespace>
+    <RootNamespace>My1076</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>1122</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Hamiltonian Cycle.cpp" />
+    <ClCompile Include="Forwards on Weibo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
